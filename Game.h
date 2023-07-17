@@ -9,6 +9,7 @@ class Game
 public:
 	Game(){ score = 0; gameOver = false; init(); }
 	void init();
+	void restart();
 	void onArrowKeyPressed(Direction d);
 	void spawnFruit();
 	void growSnake();
