@@ -3,7 +3,6 @@
 #include <vector>
 #include "Segment.h" 
 
-
 class Game
 {
 public:
@@ -21,6 +20,7 @@ private:
 public:
 	bool gameOver;
 	int score;
+	int gameFps;
 };
 
 #endif
