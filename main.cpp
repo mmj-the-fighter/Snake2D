@@ -46,6 +46,9 @@ int input(SDL_Event* e)
 		case SDL_SCANCODE_F12:
 			capture_screen();
 			break;
+		case SDL_SCANCODE_F5:
+			game.restart();
+			break;
 		case SDL_SCANCODE_LEFT:
 			game.onArrowKeyPressed(LEFT);
 			break;
