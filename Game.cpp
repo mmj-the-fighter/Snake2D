@@ -7,6 +7,13 @@ void Game::init() {
 	}
 	fruit.set(400, 300, 10, 10, 799, 599, RIGHT);
 }
+void Game::restart() {
+	score = 0;
+	gameOver = false;
+	snake.clear();
+	init();
+	fruit.setPos(rand() % (fruit.ww - fruit.w), rand() % (fruit.wh - fruit.h));
+}
 
 void Game::onArrowKeyPressed(Direction d) {
 	switch (snake[0].d){
