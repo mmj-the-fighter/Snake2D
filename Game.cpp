@@ -1,11 +1,14 @@
-#include "Game.h"
 #include <cstdlib>
+#include "Game.h"
+#include "swr_sdl_window.h"
 
 void Game::init() {
 	for (int i = 1; i < 5; i++) {
 		snake.push_back(Segment(400-i*10, 100, 10, 10, 799, 599, RIGHT));
 	}
 	fruit.set(400, 300, 10, 10, 799, 599, RIGHT);
+	gameFps = 25;
+	swr_sdl_set_frames_per_second(gameFps);
 }
 void Game::restart() {
 	score = 0;
@@ -42,6 +45,9 @@ void Game::onArrowKeyPressed(Direction d) {
 }
 
 void Game::tick() {
+	if (gameOver){
+		return;
+	}
 	int segmentCount = snake.size();
 	////Check self collision
 	Segment head = snake[0];
@@ -59,6 +65,12 @@ void Game::tick() {
 		//grow snake
 		growSnake();
 		++score;
+		//increase game speed
+		++gameFps;
+		if (gameFps > 60){
+			gameFps = 60;
+		}
+		swr_sdl_set_frames_per_second(gameFps);
 	}
 	//move segments from tail to just before head
 	segmentCount = snake.size();
