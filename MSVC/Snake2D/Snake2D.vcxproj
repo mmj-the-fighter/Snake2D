@@ -130,6 +130,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="game\game.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="spinach\common\spn_utils.cpp" />
     <ClCompile Include="spinach\core\spn_canvas.cpp" />
@@ -138,6 +139,7 @@
     <ClCompile Include="spinach\core\spn_rfont.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="game\game.h" />
     <ClInclude Include="spinach\common\spn_utils.h" />
     <ClInclude Include="spinach\core\spn_canvas.h" />
     <ClInclude Include="spinach\core\spn_core.h" />
