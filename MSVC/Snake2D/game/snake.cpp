@@ -16,7 +16,7 @@ void Snake::Init()
 			10, 10,
 			sc->GetCanvas()->GetWidth()-1, 
 			sc->GetCanvas()->GetHeight()-1, 
-			MoveDirection::RIGHT));
+			MoveDirection::RIGHT,0));
 	}
 
 }
@@ -39,6 +39,10 @@ void Snake::Render(spn::Canvas* canvas)
 	for (int i = segmentCount - 1; i >= 0; --i) {
 		segments[i].Render(canvas);
 	}
+}
+
+bool Snake::CheckCollisionWithFruit(Segment& fruit) {
+	return fruit.CheckCollision(segments[0]);
 }
 
 //void Snake::Grow() 

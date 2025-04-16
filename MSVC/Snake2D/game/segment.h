@@ -16,11 +16,11 @@ public:
 	Segment(int xpos, int ypos, 
 		int width, int height, 
 		int worldWidth, int worldHeight, 
-		MoveDirection direction);
+		MoveDirection direction, int segmentType);
 	void Set(int xpos, int ypos, 
 		int width, int height, 
 		int worldWidth, int worldHeight, 
-		MoveDirection direction);
+		MoveDirection direction, int segmentType);
 	void SetPos(int xpos, int ypos);
 	void Move();
 	void Render(spn::Canvas *canvas);
@@ -33,6 +33,7 @@ public:
 	int h;
 	int ww;
 	int wh;
+	int type;
 private:
 	bool CheckCollision(
 		int left1, int top1, 

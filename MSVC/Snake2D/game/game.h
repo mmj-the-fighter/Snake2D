@@ -22,6 +22,7 @@ public:
 	void Init(spn::SpinachCore* canvas);
 private:
 	Snake* snake;
+	Segment fruit;
 };
 
 

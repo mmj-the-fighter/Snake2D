@@ -30,8 +30,14 @@ void Game::HandleInput(const SDL_Event* sdlEvent) {
 
 void Game::UpdateAndRender(spn::Canvas* canvas) {
 	snake->Update();
+	if (snake->CheckCollisionWithFruit(fruit)) {
+		fruit.SetPos(rand() % (fruit.ww - fruit.w), rand() % (fruit.wh - fruit.h));
+	}
 	canvas->Clear();
+	fruit.Render(canvas);
 	snake->Render(canvas);
+
+
 }
 
 void Game::Init(spn::SpinachCore* core) {
@@ -39,4 +45,5 @@ void Game::Init(spn::SpinachCore* core) {
 	canvas->SetClearColor(0, 0, 128);
 	canvas->SetPrimaryColor(255, 255, 0);
 	snake = new Snake(core);
+	fruit.Set(400, 300, 10, 10, 799, 599, MoveDirection::RIGHT,1);
 }

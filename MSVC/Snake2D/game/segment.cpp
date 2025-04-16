@@ -4,15 +4,16 @@
 Segment::Segment(int xpos, int ypos,
 	int width, int height,
 	int worldWidth, int worldHeight,
-	MoveDirection direction
+	MoveDirection direction, int segmentType
 ) : x(xpos), y(ypos), w(width), h(height), 
 ww(worldWidth), wh(worldHeight), 
-moveDir(direction) {}
+moveDir(direction), type(segmentType) {}
 
 void Segment::Set(int xpos, int ypos,
 	int width, int height,
 	int worldWidth, int worldHeight,
-	MoveDirection direction
+	MoveDirection direction,
+	int segmentType
 ) {
 	x = xpos;
 	y = ypos;
@@ -20,6 +21,7 @@ void Segment::Set(int xpos, int ypos,
 	h = height;
 	ww = worldWidth;
 	wh = worldHeight;
+	type = segmentType;
 }
 
 void Segment::SetPos(int xpos, int ypos) 
@@ -57,6 +59,12 @@ void Segment::Move()
 
 void Segment::Render(spn::Canvas* canvas)
 {
+	if (type == 0) {
+		canvas->SetPrimaryColor(255, 255, 255);
+	}
+	else {
+		canvas->SetPrimaryColor(128, 128, 0);
+	}
 	canvas->DrawFilledRectangularRegion(x, y, x + w, y + h);
 }
 

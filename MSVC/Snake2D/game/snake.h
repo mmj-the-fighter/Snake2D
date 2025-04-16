@@ -17,6 +17,7 @@ public:
 	bool IsAlive() {
 		return isAlive;
 	};
+	bool CheckCollisionWithFruit(Segment& fruit);
 private:
 	std::vector<Segment> segments;
 	bool isAlive;
