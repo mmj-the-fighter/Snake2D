@@ -39,6 +39,9 @@
     <ClCompile Include="game\segment.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="game\snake.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="spinach\common\spn_utils.h">
@@ -66,6 +69,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="game\segment.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game\snake.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

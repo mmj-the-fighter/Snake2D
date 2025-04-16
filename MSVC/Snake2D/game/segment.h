@@ -28,7 +28,7 @@ public:
 public:
 	int x;
 	int y;
-	MoveDirection d;
+	MoveDirection moveDir;
 	int w;
 	int h;
 	int ww;

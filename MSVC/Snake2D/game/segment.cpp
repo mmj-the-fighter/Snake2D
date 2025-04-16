@@ -7,7 +7,7 @@ Segment::Segment(int xpos, int ypos,
 	MoveDirection direction
 ) : x(xpos), y(ypos), w(width), h(height), 
 ww(worldWidth), wh(worldHeight), 
-d(direction) {}
+moveDir(direction) {}
 
 void Segment::Set(int xpos, int ypos,
 	int width, int height,
@@ -30,7 +30,7 @@ void Segment::SetPos(int xpos, int ypos)
 
 void Segment::Move() 
 {
-	switch (d)
+	switch (moveDir)
 	{
 	case MoveDirection::UP:
 		y -= h;

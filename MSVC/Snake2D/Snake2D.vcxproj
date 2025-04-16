@@ -132,6 +132,7 @@
   <ItemGroup>
     <ClCompile Include="game\game.cpp" />
     <ClCompile Include="game\segment.cpp" />
+    <ClCompile Include="game\snake.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="spinach\common\spn_utils.cpp" />
     <ClCompile Include="spinach\core\spn_canvas.cpp" />
@@ -142,6 +143,7 @@
   <ItemGroup>
     <ClInclude Include="game\game.h" />
     <ClInclude Include="game\segment.h" />
+    <ClInclude Include="game\snake.h" />
     <ClInclude Include="spinach\common\spn_utils.h" />
     <ClInclude Include="spinach\core\spn_canvas.h" />
     <ClInclude Include="spinach\core\spn_core.h" />
