@@ -10,17 +10,15 @@ class Snake
 public:
 	Snake(spn::SpinachCore* psc);
 	void Init();
+	void Restart();
 	void Update();
 	void Render(spn::Canvas* canvas);
-	/*void Grow();*/
+	void Grow();
 	void ChangeHeadDirection(MoveDirection md);
-	bool IsAlive() {
-		return isAlive;
-	};
 	bool CheckCollisionWithFruit(Segment& fruit);
+	bool CheckCollisionWithSelf();
 private:
 	std::vector<Segment> segments;
-	bool isAlive;
 	spn::SpinachCore* sc;
 };
 #endif

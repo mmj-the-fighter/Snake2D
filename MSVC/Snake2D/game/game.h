@@ -15,14 +15,23 @@ public:
 	~Game() {
 		if (nullptr != snake) {
 			delete snake;
+			snake = nullptr;
 		}
 	}
 	void HandleInput(const SDL_Event* sdlEvent);
 	void UpdateAndRender(spn::Canvas* canvas);
 	void Init(spn::SpinachCore* canvas);
+	void Restart();
+	void UpdateScoreStr();
 private:
+	spn::SpinachCore* sc;
 	Snake* snake;
 	Segment fruit;
+	bool isGameOver;
+	int score;
+	std::string scoreStr;
+	int desiredFps;
+	int w, h, ww, wh;
 };
 
 
